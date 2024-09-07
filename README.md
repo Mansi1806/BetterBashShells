@@ -1,76 +1,16 @@
 # BetterBashShells
  PowerShell Variations to Mitigate Bash 
 
-
- Project Overview: PowerShell Variations to Mitigate Bash Limitations
-This repository contains a collection of custom shell variations, each designed to address specific limitations of Bash, the widely-used Unix shell. These shells aim to provide enhanced functionality, improved performance, better security, and a more user-friendly experience, catering to a wide range of use cases.
-
-Purpose
-The goal of this project is to develop multiple versions of a custom shell that overcome various deficiencies of Bash. By leveraging modern tools, technologies, and best practices, we aim to create more robust and effective alternatives for different user needs.
-
-Project Variations and Features
-Each variation in this repository focuses on a specific area of improvement:
-
-DebugShell
-Features: Advanced debugging tools, step-by-step execution tracing, error highlighting, verbose mode.
-Tools/Tech: Custom logging framework, error handling library, GDB integration for low-level debugging.
-Metrics: Number of detected errors, average debugging time, user feedback on error message clarity.
-SafeShell
-Features: Safe execution modes, sandboxing, protection against command injection, secure environment management.
-Tools/Tech: Seccomp for sandboxing, AppArmor or SELinux for mandatory access control, input sanitization libraries.
-Metrics: Security audit score, number of successful attack mitigations, reduction in unauthorized access attempts.
-SpeedShell
-Features: Performance optimizations, caching of frequently used commands, just-in-time command execution, multi-threading support.
-Tools/Tech: POSIX Threads (pthreads), command caching system, custom memory management routines.
-Metrics: Command execution time, memory usage, CPU load, performance benchmarks against Bash.
-DataShell
-Features: Support for advanced data structures (hash maps, linked lists, trees), built-in data manipulation functions.
-Tools/Tech: Custom data structure libraries, in-memory storage optimizations, parser improvements.
-Metrics: Data processing speed, memory footprint, benchmark comparisons with external tools (e.g., awk, sed).
-PortableShell
-Features: Cross-platform compatibility, consistent behavior across Unix-like systems, environment abstraction.
-Tools/Tech: Autotools, CMake, and CI/CD pipelines (e.g., GitHub Actions) for testing across multiple environments.
-Metrics: Number of supported platforms, success rate of cross-platform tests, user feedback on compatibility.
-InteractiveShell
-Features: Auto-completion, syntax highlighting, command suggestions, integrated help/documentation.
-Tools/Tech: readline library, custom syntax highlighter, help documentation parser.
-Metrics: User adoption rate, average user session time, reduction in command errors due to suggestions.
-ParallelShell
-Features: Multi-threaded execution, parallel task management, process isolation.
-Tools/Tech: POSIX Threads, task scheduler implementation, process management tools.
-Metrics: Parallel execution speedup, number of simultaneous processes handled, system resource usage.
-MathShell
-Features: Floating-point arithmetic, support for complex mathematical functions, custom math parser.
-Tools/Tech: GNU bc for extended math operations, custom floating-point library, math parser algorithms.
-Metrics: Accuracy of mathematical calculations, processing time for complex expressions, user satisfaction ratings.
-ErrorResistantShell
-Features: Automatic retries, graceful recovery from errors, configurable fallbacks for failed commands.
-Tools/Tech: State management libraries, custom error detection routines, logging and monitoring tools.
-Metrics: Number of successful recoveries, average recovery time, reduction in failed command executions.
-DevOpsShell
-Features: Integration with DevOps tools (Docker, Kubernetes, Ansible), automation functions for deployment and monitoring.
-Tools/Tech: Docker API, Kubernetes client libraries, custom Ansible modules, REST API integrations.
-Metrics: Deployment time, automation coverage, compatibility with DevOps tools, user feedback from DevOps professionals.
-Goals and Objectives
-Provide alternative shell options to mitigate Bash's limitations.
-Enhance productivity, security, and performance for various use cases.
-Promote best practices in scripting through innovative design.
-Contribution Guidelines
-Contributions are welcome! Please see the CONTRIBUTING.md file for more details on how to contribute, submit pull requests, or report issues.
-
-Metrics Tracking and Performance Evaluation
-To ensure that each variation meets its intended goals, we will use the following metrics:
-
-User Feedback: Collect feedback from users on ease of use, error handling, and overall experience.
-Performance Benchmarks: Measure execution speed, memory usage, and CPU load compared to Bash.
-Security Audits: Conduct regular security audits to ensure the shell variants are secure against common threats.
-Cross-Platform Testing: Use continuous integration to test compatibility across multiple platforms.
-Tools and Technologies Used
-Programming Languages: C, C++, POSIX Shell Scripting.
-Development Tools: GCC, GDB, Make, CMake, Git, Autotools.
-Testing Tools: Valgrind (memory leak detection), AddressSanitizer, GitHub Actions (CI/CD).
-Security Tools: Seccomp, AppArmor/SELinux.
-Libraries: readline (for interactive features), POSIX Threads (for parallel execution), custom logging and error-handling libraries.
-Getting Started
-Clone the repository: git clone https://github.com/yourusername/powershell-variations.git
-Choose a shell variant to work with and follow the instructions in its respective README file.
+**Comparison of Popular Shells**
+| **Shell**                       | **Description**                                            | **Default on**                           | **Script Compatibility**                        | **Customizability**                               | **Interactivity Features**                                     | **Performance**                                        | **Best Use Cases**                                       |
+|---------------------------------|------------------------------------------------------------|-------------------------------------------|-------------------------------------------------|----------------------------------------------------|----------------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|
+| **Bourne Shell (sh)**           | Original Unix shell, minimalistic and portable             | Legacy Unix systems                       | High (Standard POSIX compliance)                | Low (Few options to customize)                    | Basic (No command history or auto-completion)               | Very High (Few features, very lightweight)                | Running legacy scripts, simple system scripts            |
+| **Bash (Bourne Again Shell)**   | Most popular shell, extended version of Bourne Shell       | Linux (most distributions), macOS (pre-Catalina) | High (Compatible with sh and POSIX)              | High (Themes, prompts, and scripting customization) | High (Command history, tab completion, scripting features)  | High (Efficient with extensive features)                   | General-purpose, system scripts, interactive use         |
+| **Z Shell (zsh)**               | Highly customizable shell, incorporates features of Bash, ksh, and tcsh | macOS (Catalina and later)                | High (Compatible with Bash)                     | Very High (Plugins, themes, and extensive configuration options) | Very High (Advanced completion, spelling correction, plugins/themes) | Medium to High (Good balance of features and performance) | Customization, power users, development                   |
+| **Korn Shell (ksh)**            | Extended Bourne shell with advanced scripting              | Some commercial Unix (AIX, Solaris)       | High (Compatible with sh and POSIX)             | Medium (Limited customization compared to zsh/Bash) | Medium (Basic command history and job control)              | High (Efficient with good scripting support)              | Advanced scripting, commercial Unix environments          |
+| **C Shell (csh)**               | Syntax similar to C, designed for programming              | Legacy Unix systems                       | Medium (Different syntax; less compatible with sh/Bash) | Low (Minimal configuration options)               | Basic (Limited to simple command history)                  | High (Fast due to fewer features)                          | Compatibility with old C-like scripts                     |
+| **tcsh**                        | Enhanced version of C shell with additional features       | Some Unix-like systems                    | Medium (Compatible with csh, but not sh/Bash)   | Medium (More than csh but less than zsh/Bash)     | Medium (Better features than csh, but not as rich as zsh)   | High (Efficient with moderate features)                   | For users who prefer C-like syntax                        |
+| **Fish (Friendly Interactive Shell)** | User-friendly shell with modern features, unique syntax | None (Installable)                        | Low (Unique syntax, not compatible with sh/Bash) | Very High (Highly customizable and user-friendly)  | Very High (Autosuggestions, syntax highlighting, easy configuration) | Medium (More features, slightly heavier)                 | Ease of use, beginners, interactive use                   |
+| **Dash (Debian Almquist Shell)**| Minimalistic POSIX-compliant shell for performance         | Debian-based systems (like Ubuntu)        | High (Compatible with sh and POSIX)             | Low (Minimal configuration; designed for speed)   | Basic (Minimal features to keep it lightweight)            | Very High (Extremely lightweight, fast)                   | Fast script execution, minimal environments               |
+| **PowerShell**                  | Object-oriented shell for Windows, now cross-platform      | Windows (modern versions)                | Low (Different syntax, not compatible with Unix shells) | High (Customizable, especially for Windows environments) | High (Command-line editing, scripting, .NET integration)   | Medium (Moderate performance, rich in features)           | Windows system management, cross-platform tasks           |
+| **BusyBox Shell**               | Lightweight shell for embedded systems                     | Embedded Linux systems                    | High (POSIX-compliant, suitable for scripts)     | Low (Very few customization options, designed for simplicity) | Basic (Minimal to conserve resources)                     | Very High (Very lightweight, optimized for small environments) | Embedded systems, resource-constrained environments       |
